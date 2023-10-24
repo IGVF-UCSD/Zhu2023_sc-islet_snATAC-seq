@@ -1,0 +1,16 @@
+file	format	type	num_seqs	sum_len	min_len	avg_len	max_len
+/cellar/users/aklie/data/datasets/Zhu2023_sc-islet_snATAC-seq/fastq/04Jul23/SRX15207297/SRR19140214_1.fastq.gz	FASTQ	DNA	624062139	63030276039	101	101.0	101
+/cellar/users/aklie/data/datasets/Zhu2023_sc-islet_snATAC-seq/fastq/04Jul23/SRX15207297/SRR19140214_2.fastq.gz	FASTQ	DNA	624062139	9984994224	16	16.0	16
+/cellar/users/aklie/data/datasets/Zhu2023_sc-islet_snATAC-seq/fastq/04Jul23/SRX15207297/SRR19140214_3.fastq.gz	FASTQ	DNA	624062139	63030276039	101	101.0	101
+/cellar/users/aklie/data/datasets/Zhu2023_sc-islet_snATAC-seq/fastq/04Jul23/SRX15207298/SRR19140213_1.fastq.gz	FASTQ	DNA	434496051	43884101151	101	101.0	101
+/cellar/users/aklie/data/datasets/Zhu2023_sc-islet_snATAC-seq/fastq/04Jul23/SRX15207298/SRR19140213_2.fastq.gz	FASTQ	DNA	434496051	6951936816	16	16.0	16
+/cellar/users/aklie/data/datasets/Zhu2023_sc-islet_snATAC-seq/fastq/04Jul23/SRX15207298/SRR19140213_3.fastq.gz	FASTQ	DNA	434496051	43884101151	101	101.0	101
+/cellar/users/aklie/data/datasets/Zhu2023_sc-islet_snATAC-seq/fastq/04Jul23/SRX15207299/SRR19140212_1.fastq.gz	FASTQ	DNA	231878793	23419758093	101	101.0	101
+/cellar/users/aklie/data/datasets/Zhu2023_sc-islet_snATAC-seq/fastq/04Jul23/SRX15207299/SRR19140212_2.fastq.gz	FASTQ	DNA	231878793	3710060688	16	16.0	16
+/cellar/users/aklie/data/datasets/Zhu2023_sc-islet_snATAC-seq/fastq/04Jul23/SRX15207299/SRR19140212_3.fastq.gz	FASTQ	DNA	231878793	23419758093	101	101.0	101
+/cellar/users/aklie/data/datasets/Zhu2023_sc-islet_snATAC-seq/fastq/04Jul23/SRX15207300/SRR19140211_1.fastq.gz	FASTQ	DNA	126271591	12753430691	101	101.0	101
+/cellar/users/aklie/data/datasets/Zhu2023_sc-islet_snATAC-seq/fastq/04Jul23/SRX15207300/SRR19140211_2.fastq.gz	FASTQ	DNA	126271591	2020345456	16	16.0	16
+/cellar/users/aklie/data/datasets/Zhu2023_sc-islet_snATAC-seq/fastq/04Jul23/SRX15207300/SRR19140211_3.fastq.gz	FASTQ	DNA	126271591	12753430691	101	101.0	101
+/cellar/users/aklie/data/datasets/Zhu2023_sc-islet_snATAC-seq/fastq/04Jul23/SRX15207301/SRR19140210_1.fastq.gz	FASTQ	DNA	173358378	8667918900	50	50.0	50
+/cellar/users/aklie/data/datasets/Zhu2023_sc-islet_snATAC-seq/fastq/04Jul23/SRX15207301/SRR19140210_2.fastq.gz	FASTQ	DNA	173358378	2773734048	16	16.0	16
+/cellar/users/aklie/data/datasets/Zhu2023_sc-islet_snATAC-seq/fastq/04Jul23/SRX15207301/SRR19140210_3.fastq.gz	FASTQ	DNA	173358378	8667918900	50	50.0	50
