@@ -47,7 +47,7 @@ if [ ! -d $output_dir/$sample ]; then
 fi
 
 # Go to output directory
-cd $output_dir/$sample
+cd $output_dir
 
 # Run the command
 cmd="cellranger-atac count \
