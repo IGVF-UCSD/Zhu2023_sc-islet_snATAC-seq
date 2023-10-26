@@ -1,0 +1,6 @@
+Sample ID,Sequenced read pairs,Median high-quality fragments per cell,Estimated number of cells,TSS enrichment score,Fraction of high-quality fragments overlapping TSS,Fraction of transposition events in peaks in cells,Confidently mapped read pairs
+MM129,624062139,15812.5,20000,8.3837,0.3406,0.5825,0.9435
+MM157,434496051,9110.5,20008,8.0018,0.2956,0.6244,0.9546
+MM166,231878793,10708.0,10075,7.8213,0.3083,0.5671,0.942
+MM168,126271591,6096.5,7998,6.9568,0.2965,0.4694,0.9412
+MM290,173358378,10074.0,8953,6.3713,0.2844,0.5623,0.9244
