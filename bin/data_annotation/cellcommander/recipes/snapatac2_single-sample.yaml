@@ -12,6 +12,6 @@ io:
   save_intermediate: true
   gene_activity: true
 qc:
-  max_num_fragments: 50000
-  min_num_fragments: 2000
+  max_num_fragments: 60000
+  min_num_fragments: 1000
   min_tsse: 12

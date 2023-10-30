@@ -41,11 +41,6 @@ sample_ids=(
 input_dir=$fastq_dir/${experiment_accessions[$SLURM_ARRAY_TASK_ID-1]}
 sample=${sample_ids[$SLURM_ARRAY_TASK_ID-1]}
 
-# Make output directory if doesn't exist
-if [ ! -d $output_dir/$sample ]; then
-    mkdir -p $output_dir/$sample
-fi
-
 # Go to output directory
 cd $output_dir
 

@@ -1,14 +1,14 @@
 #!/bin/bash
 #SBATCH --partition=carter-compute
 #SBATCH --output=/cellar/users/aklie/data/datasets/Zhu2023_sc-islet_snATAC-seq/bin/data_annotation/cellcommander/slurm_logs/%x.%A_%a.out
-#SBATCH --ntasks=1
-#SBATCH --mem-per-cpu=32G
+#SBATCH --cpus-per-task=8
+#SBATCH --mem=64G 
 #SBATCH --time=02-00:00:00
 #SBATCH --array=1-5%5
 
 #####
 # USAGE:
-# sbatch --job-name=igvf_sc-islet_10X-Multiome_ATAC_pipeline ATAC.sh
+# sbatch --job-name=igvf_sc-islet_10X-Multiome_ATAC_pipeline_cleanup ATAC.sh
 #####
 
 # Date
@@ -34,7 +34,7 @@ sample_ids=(
 )
 indir_path=${indir_paths[$SLURM_ARRAY_TASK_ID-1]}
 sample_id=${sample_ids[$SLURM_ARRAY_TASK_ID-1]}
-outdir_path=/cellar/users/aklie/data/datasets/Zhu2023_sc-islet_snATAC-seq/annotation/24Oct23/cellcommander/${sample_id}/atac
+outdir_path=/cellar/users/aklie/data/datasets/Zhu2023_sc-islet_snATAC-seq/annotation/26Oct23/cellcommander/${sample_id}
 
 # If output dir does not exist, create it
 if [ ! -d $outdir_path ]; then
@@ -45,30 +45,30 @@ fi
 echo -e "Running step 1 -- QC and filtering\n"
 metadata_path=$indir_path/singlecell.csv
 cmd="cellcommander qc \
---input_h5_path $indir_path/raw_peak_bc_matrix.h5 \
---outdir_path $outdir_path/qc \
+--input_h5_path $indir_path/filtered_peak_bc_matrix.h5 \
+--outdir_path $outdir_path/threshold_qc \
 --output_prefix threshold_qc \
 --metadata_path $metadata_path \
 --metadata_source cellranger \
 --mode atac \
 --filtering_strategy threshold \
---total_counts_low 5000 \
---total_counts_hi 50000 \
---n_features_low 750 \
---n_for_ns_calc 10000 \
+--total_counts_low 1000 \
+--total_counts_hi 60000 \
+--n_features_low 1000 \
+--n_for_ns_calc 1000 \
 --ns_hi 1.5 \
---n_tss 3000 \
---tss_low 5 \
---tss_hi 50 \
+--n_tss 1000 \
+--tss_low 4 \
+--tss_hi 18 \
 --random-state 1234"
 echo -e "Running:\n $cmd\n"
-eval $cmd
+#eval $cmd
 echo -e "Done with step 1\n"
 
 # Step 2 -- Detect doublets
 echo -e "Running step 2 -- Detect doublets\n"
 cmd="cellcommander detect-doublets \
---input_h5ad_path $outdir_path/qc/threshold_qc.h5ad \
+--input_h5ad_path $outdir_path/threshold_qc/threshold_qc.h5ad \
 --outdir_path $outdir_path/detect_doublets \
 --output_prefix amulet_only \
 --method amulet"
@@ -106,6 +106,7 @@ echo -e "Running step 5 -- Reduce dimensionality\n"
 cmd="cellcommander reduce-dimensions \
 --input_h5ad_path $outdir_path/select_features/signac_only.h5ad \
 --outdir_path $outdir_path/reduce_dimensions \
+--output_prefix muon_lsi \
 --method lsi \
 --layer tfidf_norm \
 --variable-features-key highly_variable_signac \

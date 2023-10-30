@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"path": "../../../Zhu2023_sc-islet_scRNA-seq"
+		},
+		{
+			"path": "../../../../../projects/igvf/CellCommander"
+		},
+		{
+			"path": "../.."
+		},
+		{
+			"path": "../../../../../opt/igvf-ucsd/single_cell_utilities"
+		},
+		{
+			"path": "../../../igvf_sc-islet_10X-Multiome"
+		}
+	],
+	"settings": {}
+}

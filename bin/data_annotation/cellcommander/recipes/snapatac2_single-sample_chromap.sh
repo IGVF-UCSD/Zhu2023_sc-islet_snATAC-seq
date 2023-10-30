@@ -8,7 +8,7 @@
 
 #####
 # USAGE:
-# sbatch --job-name=igvf_sc-islet_10X-Multiome_snapatac2_single-sample snapatac2_single-sample.sh
+# sbatch --job-name=igvf_sc-islet_10X-Multiome_snapatac2_single-sample_chromap snapatac2_single-sample-chromap.sh
 #####
 
 # Date
@@ -20,17 +20,17 @@ source activate /cellar/users/aklie/opt/miniconda3/envs/cellcommander
 
 indir_paths=(
     '/cellar/users/aklie/data/datasets/Zhu2023_sc-islet_snATAC-seq/processed/23Oct23/chromap/MM129'
-    #'/cellar/users/aklie/data/datasets/Zhu2023_sc-islet_snATAC-seq/processed/23Oct23/chromap/MM157'
-    #'/cellar/users/aklie/data/datasets/Zhu2023_sc-islet_snATAC-seq/processed/23Oct23/chromap/MM166'
-    #'/cellar/users/aklie/data/datasets/Zhu2023_sc-islet_snATAC-seq/processed/23Oct23/chromap/MM168'
-    #'/cellar/users/aklie/data/datasets/Zhu2023_sc-islet_snATAC-seq/processed/23Oct23/chromap/MM290'
+    '/cellar/users/aklie/data/datasets/Zhu2023_sc-islet_snATAC-seq/processed/23Oct23/chromap/MM157'
+    '/cellar/users/aklie/data/datasets/Zhu2023_sc-islet_snATAC-seq/processed/23Oct23/chromap/MM166'
+    '/cellar/users/aklie/data/datasets/Zhu2023_sc-islet_snATAC-seq/processed/23Oct23/chromap/MM168'
+    '/cellar/users/aklie/data/datasets/Zhu2023_sc-islet_snATAC-seq/processed/23Oct23/chromap/MM290'
 )
 sample_ids=(
     'MM129'
-    #'MM157'
-    #'MM166'
-    #'MM168'
-    #'MM290'
+    'MM157'
+    'MM166'
+    'MM168'
+    'MM290'
 )
 indir_path=${indir_paths[$SLURM_ARRAY_TASK_ID-1]}
 sample_id=${sample_ids[$SLURM_ARRAY_TASK_ID-1]}
@@ -49,6 +49,6 @@ cmd="cellcommander recipes \
 --mode single-sample \
 --params_path $params_file"
 echo -e "Running command:\n$cmd\n"
-eval $cmd
+#eval $cmd
 
 date
